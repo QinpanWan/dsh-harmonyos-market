@@ -41,7 +41,7 @@ dsh plugin --profile web add github:Entity-Him/dsh-hiboard-push
 
 ## 上架
 
-想上架你的插件？看 [CONTRIBUTING.md](CONTRIBUTING.md) —— 三分钟提交一个条目。
+想上架你的插件、或参与共建开发？看 [CONTRIBUTING.md](CONTRIBUTING.md) —— 三分钟提交一个条目；开发群 930088487 招募共同创建者中。
 条目写入 `data/plugins/*.yml` 后，CI 会自动预检并重新生成 `plugins.json`。
 
 ## 路线图
