@@ -2,6 +2,7 @@
 // Zero-dependency: parses data/plugins/*.yml entries, fetches each plugin package.json
 // (GitHub raw), walks the npm dependency tree, checks the native-module blacklist,
 // and compares the result against the entry declared harmonyos.level.
+// Supports monorepo entries: url may carry a #path:/sub/dir suffix.
 // Usage: node check-compat.mjs [--entry owner__name.yml]
 import { readdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
@@ -34,9 +35,10 @@ function parseEntry(text) {
         out[cur] = out[cur] || {};
         out[cur][key] = val;
       } else if (cur === "description" && (key === "en" || key === "zh")) {
+        out[cur] = out[cur] || {};
         out[cur][key] = val;
       } else {
-        out[key] = val.replace(/^[\x22\x27]|[\x22\x27]$/g, "");
+        out[key] = val.replace(/^["\x27]|["\x27]$/g, "");
         cur = null;
       }
     } else {
@@ -70,6 +72,16 @@ async function fetchText(url) {
   } catch { return null; } finally { clearTimeout(t); }
 }
 
+// GitHub raw package.json URL for an entry url, honoring #path:/sub/dir.
+function pkgUrlOf(url) {
+  const g = /github\.com\/([^/]+)\/([^/]+?)(?:[/#?]|$)/.exec(url || "");
+  if (!g) return null;
+  const sub = /#path:\/([^#]+)/.exec(url || "");
+  const subpath = sub && sub[1] ? sub[1].replace(/\/+$/, "") : "";
+  return "https://raw.githubusercontent.com/" + g[1] + "/" + g[2] + "/HEAD/" +
+    (subpath ? subpath + "/" : "") + "package.json";
+}
+
 const seen = new Set();
 async function scanDeps(name, depth) {
   if (depth > MAX_DEPTH || seen.has(name)) return [];
@@ -97,11 +109,11 @@ async function checkEntry(file) {
   const level = e.harmonyos && e.harmonyos.level;
   if (!level) missing.push("harmonyos.level");
   if (missing.length) return { file, ok: false, level, errors: ["missing: " + missing.join(",")] };
-  const g = /github\.com\/([^/]+)\/([^/]+)/.exec(e.url || "");
+  const pkgUrl = pkgUrlOf(e.url);
   let hits = [];
   let scanned = false;
-  if (g) {
-    const pkg = await fetchText("https://raw.githubusercontent.com/" + g[1] + "/" + g[2] + "/HEAD/package.json");
+  if (pkgUrl) {
+    const pkg = await fetchText(pkgUrl);
     if (pkg) {
       try {
         const p = JSON.parse(pkg);

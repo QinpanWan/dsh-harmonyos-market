@@ -1,0 +1,47 @@
+{
+  "name": "dsh-harmonyos-market",
+  "version": "0.1.0",
+  "description": "HarmonyOS dsh plugin market client: browse the dsh-harmonyos-market catalog and one-click install from the dsh settings panel. · 鸿蒙专属 dsh 插件市场：在 dsh 设置面板里一键浏览与安装。",
+  "author": "Entity-Him",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Entity-Him/dsh-harmonyos-market.git"
+  },
+  "homepage": "https://github.com/Entity-Him/dsh-harmonyos-market#readme",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./client/client.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "client",
+    "cordis.patch.yml",
+    "README.md"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web"
+    }
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": ">=4.0.0-rc.1 <5.0.0-0",
+    "@deepseek-ai/dsh-settings": ">=0.0.1-rc.1 <0.1.0 || >=0.1.0-rc.1 <0.2.0-0",
+    "@deepseek-ai/schemastery": ">=3.0.0-rc.1 <4.0.0-0"
+  },
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "harmonyos",
+    "huawei",
+    "market",
+    "鸿蒙",
+    "插件市场"
+  ]
+}

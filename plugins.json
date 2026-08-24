@@ -1,0 +1,51 @@
+{
+  "name": "dsh-harmonyos-market",
+  "url": "https://github.com/Entity-Him/dsh-harmonyos-market",
+  "source": "https://raw.githubusercontent.com/Entity-Him/dsh-harmonyos-market/main/plugins.json",
+  "updated": "2026-08-24",
+  "count": 2,
+  "categories": {
+    "market": {
+      "en": "Market",
+      "zh": "市场"
+    },
+    "notification": {
+      "en": "Notification",
+      "zh": "通知"
+    }
+  },
+  "plugins": [
+    {
+      "name": "dsh-harmonyos-market",
+      "owner": "Entity-Him",
+      "url": "https://github.com/Entity-Him/dsh-harmonyos-market#path:/plugins/dsh-harmonyos-market",
+      "category": "market",
+      "description": {
+        "en": "HarmonyOS plugin market client: an independent settings section in dsh to browse and one-click install from this catalog",
+        "zh": "鸿蒙专属插件市场客户端：在 dsh 设置里新增独立「鸿蒙市场」分节，一键浏览与安装本市场插件"
+      },
+      "install": "dsh plugin --profile web add github:Entity-Him/dsh-harmonyos-market#path:/plugins/dsh-harmonyos-market",
+      "added": "2026-08-25",
+      "harmonyos": {
+        "level": "native-free",
+        "notes": "鸿蒙专属插件市场客户端；在 dsh 设置里新增「鸿蒙市场」分节，一键浏览/安装本市场插件，零运行时依赖"
+      }
+    },
+    {
+      "name": "dsh-hiboard-push",
+      "owner": "Entity-Him",
+      "url": "https://github.com/Entity-Him/dsh-hiboard-push",
+      "category": "notification",
+      "description": {
+        "en": "Push dsh task completion to HarmonyOS negative-one-screen (today-task / schedule)",
+        "zh": "把 dsh 任务完成推送到鸿蒙负一屏（今日任务 / 定时任务通知）"
+      },
+      "install": "dsh plugin --profile web add github:Entity-Him/dsh-hiboard-push",
+      "added": "2026-08-25",
+      "harmonyos": {
+        "level": "native-free",
+        "notes": "零依赖纯 JS；配合鸿蒙负一屏推送通道（today-task / schedule 任务完成通知）"
+      }
+    }
+  ]
+}

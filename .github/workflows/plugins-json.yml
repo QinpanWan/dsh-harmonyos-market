@@ -1,0 +1,28 @@
+name: plugins-json
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Generate plugins.json
+        run: node scripts/build-plugins-json.mjs
+      - name: Commit generated catalog
+        run: |
+          git config user.name "dsh-harmonyos-market[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add plugins.json
+          if git diff --cached --quiet; then
+            echo "plugins.json unchanged"
+          else
+            git commit -m "chore: regenerate plugins.json"
+            git push
+          fi

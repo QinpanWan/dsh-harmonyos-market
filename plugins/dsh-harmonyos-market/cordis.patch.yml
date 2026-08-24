@@ -1,0 +1,8 @@
+# dsh-harmonyos-market bundle patch
+#
+# Mounts the HarmonyOS plugin market client into the profile loader.
+# `name` must resolve from the profile node_modules (installed via
+# `dsh plugin --profile <name> add github:Entity-Him/dsh-harmonyos-market`).
+- insert:
+    - id: harmonyos-market
+      name: dsh-harmonyos-market
