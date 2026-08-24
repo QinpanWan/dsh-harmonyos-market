@@ -1,0 +1,12 @@
+name: dsh-hiboard-push
+owner: Entity-Him
+url: https://github.com/Entity-Him/dsh-hiboard-push
+category: notification
+harmonyos:
+  level: native-free
+  notes: 零依赖纯 JS；配合鸿蒙负一屏推送通道（today-task / schedule 任务完成通知）
+description:
+  en: Push dsh task completion to HarmonyOS negative-one-screen (today-task / schedule)
+  zh: 把 dsh 任务完成推送到鸿蒙负一屏（今日任务 / 定时任务通知）
+install: dsh plugin --profile web add github:Entity-Him/dsh-hiboard-push
+added: 2026-08-25
