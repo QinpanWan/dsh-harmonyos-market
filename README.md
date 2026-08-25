@@ -29,6 +29,7 @@ dsh plugin --profile web add github:Entity-Him/dsh-harmonyos-market
 ## 插件清单
 
 - [dsh-hiboard-push](data/plugins/Entity-Him__dsh-hiboard-push.yml) — 鸿蒙负一屏任务完成推送（今日任务/定时任务通知）
+- [dsh-doc-quick](data/plugins/Entity-Him__dsh-doc-quick.yml) — 拖拽文档进 Web 对话框快速处理，右侧侧栏展示产出与文件路径
 - [dsh-harmonyos-market](data/plugins/Entity-Him__dsh-harmonyos-market.yml) — 鸿蒙市场客户端（在设置里一键浏览/安装本市场插件）
 
 ## 命令行安装

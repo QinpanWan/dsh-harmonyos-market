@@ -1,0 +1,12 @@
+name: dsh-doc-quick
+owner: Entity-Him
+url: https://github.com/Entity-Him/dsh-doc-quick
+category: tool
+harmonyos:
+  level: native-free
+  notes: 零依赖纯 JS；拖拽文档进 Web 对话框直读本地文件处理，右侧侧栏展示产出与文件路径
+description:
+  en: Drag documents into the dsh web chat for direct local-file processing; a right sidebar lists the outputs and file paths
+  zh: 拖拽文档进 Web 对话框快速处理，Agent 直读本地文件，右侧侧栏展示产出与文件路径
+install: dsh plugin --profile web add github:Entity-Him/dsh-doc-quick
+added: 2026-08-25
