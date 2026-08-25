@@ -1,0 +1,12 @@
+name: dsh-sky-skin
+owner: Entity-Him
+url: https://github.com/Entity-Him/dsh-sky-skin
+category: theme
+harmonyos:
+  level: native-free
+  notes: 纯 JS 零依赖；光遇·遇境主题皮肤（星盘光之子/烛火暖金/深蓝星空），设置里一键切换
+description:
+  en: Sky: Children of the Light themed skin for the dsh web UI (star-map light children, candlelight gold, starry night)
+  zh: 光遇·遇境主题皮肤：星盘之上的光之子，烛火暖金与深蓝星空双主题
+install: dsh plugin --profile web add github:Entity-Him/dsh-sky-skin
+added: 2026-08-25
