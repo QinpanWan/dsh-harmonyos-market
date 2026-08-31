@@ -2,8 +2,8 @@
   "name": "dsh-harmonyos-market",
   "url": "https://github.com/Entity-Him/dsh-harmonyos-market",
   "source": "https://raw.githubusercontent.com/Entity-Him/dsh-harmonyos-market/main/plugins.json",
-  "updated": "2026-08-24",
-  "count": 2,
+  "updated": "2026-08-31",
+  "count": 5,
   "categories": {
     "market": {
       "en": "Market",
@@ -12,9 +12,37 @@
     "notification": {
       "en": "Notification",
       "zh": "通知"
+    },
+    "security": {
+      "en": "Security",
+      "zh": "安全"
+    },
+    "theme": {
+      "en": "Theme",
+      "zh": "皮肤"
+    },
+    "tool": {
+      "en": "Tool",
+      "zh": "工具"
     }
   },
   "plugins": [
+    {
+      "name": "dsh-doc-quick",
+      "owner": "Entity-Him",
+      "url": "https://github.com/Entity-Him/dsh-doc-quick",
+      "category": "tool",
+      "description": {
+        "en": "Drag documents into the dsh web chat for direct local-file processing; a right sidebar lists the outputs and file paths",
+        "zh": "拖拽文档进 Web 对话框快速处理，Agent 直读本地文件，右侧侧栏展示产出与文件路径"
+      },
+      "install": "dsh plugin --profile web add github:Entity-Him/dsh-doc-quick",
+      "added": "2026-08-25",
+      "harmonyos": {
+        "level": "native-free",
+        "notes": "零依赖纯 JS；拖拽文档进 Web 对话框直读本地文件处理，右侧侧栏展示产出与文件路径"
+      }
+    },
     {
       "name": "dsh-harmonyos-market",
       "owner": "Entity-Him",
@@ -45,6 +73,38 @@
       "harmonyos": {
         "level": "native-free",
         "notes": "零依赖纯 JS；配合鸿蒙负一屏推送通道（today-task / schedule 任务完成通知）"
+      }
+    },
+    {
+      "name": "dsh-prompt-antivirus",
+      "owner": "QinpanWan",
+      "url": "https://github.com/QinpanWan/dsh-prompt-antivirus",
+      "category": "security",
+      "description": {
+        "en": "'Global prompt-injection / context-virus defense for DeepSeek Harness: scans tool arguments, tool results, pre-model messages and the outbound stream; quarantine/block/monitor modes, canary trap, evolvable on-disk signature library with learn/import/export.'",
+        "zh": "'全局提示注入 / 上下文病毒防御：扫描工具参数、工具结果、进模型前消息与出站流；隔离/阻断/监控三模式、金丝雀陷阱、可演进磁盘签名库（学习/导入/导出）。'"
+      },
+      "install": "dsh plugin --profile web add github:QinpanWan/dsh-prompt-antivirus",
+      "added": "2026-08-31",
+      "harmonyos": {
+        "level": "native-free",
+        "notes": "纯 JS 零原生依赖；全局提示注入/上下文病毒防御（扫描工具参数、结果、进模型前消息与出站流），三模式 + 金丝雀陷阱 + 可演进磁盘签名库（学习/导入/导出），审计落盘"
+      }
+    },
+    {
+      "name": "dsh-sky-skin",
+      "owner": "Entity-Him",
+      "url": "https://github.com/Entity-Him/dsh-sky-skin",
+      "category": "theme",
+      "description": {
+        "en": "Sky: Children of the Light themed skin for the dsh web UI — seven map themes (Home/Dawn/Prairie/Forest/Valley/Wasteland/Vault) switchable from the settings page, hot-applied",
+        "zh": "光遇·遇境主题皮肤：七大地图主题（遇境/晨岛/云野/雨林/霞谷/暮土/禁阁），设置页一键热切换、无需重启"
+      },
+      "install": "dsh plugin --profile web add github:Entity-Him/dsh-sky-skin",
+      "added": "2026-08-25",
+      "harmonyos": {
+        "level": "native-free",
+        "notes": "纯 JS 零依赖；光遇·遇境主题皮肤，七大地图主题（遇境/晨岛/云野/雨林/霞谷/暮土/禁阁）设置页一键热切换"
       }
     }
   ]
