@@ -21,6 +21,7 @@ const CATEGORIES = {
   session: { en: "Session", zh: "会话" },
   usage: { en: "Usage", zh: "用量" },
   misc: { en: "Misc", zh: "其他" },
+  security: { en: "Security", zh: "安全" },
 }
 
 // Minimal YAML-subset parser matching the entry schema (kept in sync with

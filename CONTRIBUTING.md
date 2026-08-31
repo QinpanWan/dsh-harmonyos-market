@@ -43,7 +43,7 @@
 name: your-plugin
 owner: your-github-id
 url: https://github.com/your-github-id/your-plugin
-category: ui | tool | notification | theme | market | agent
+category: ui | tool | notification | theme | market | agent | security
 harmonyos:
   level: native-free | patched | incompatible
   notes: 一句话说明鸿蒙兼容情况（补丁路径 / 原生依赖清单）
